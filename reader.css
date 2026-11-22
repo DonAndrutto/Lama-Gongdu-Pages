@@ -1,0 +1,41 @@
+@import '@fontsource/jomolhari/400.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/eb-garamond/400.css';
+@import '@fontsource/eb-garamond/600.css';
+@import '@fontsource/eb-garamond/400-italic.css';
+@import './family.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --highlight: #f4dfac; --on-accent: #fffaf2; }
+:root.dark { --highlight: #6a471e; --on-accent: #24190b; }
+body { font-family: Inter, sans-serif; font-size: 1rem; }
+.catalogue { width: min(100%,60rem); }
+h1, h2, h3 { font-family: 'EB Garamond',Georgia,serif; }
+.font-tibetan { font-family: Jomolhari,serif; line-height: 1.8; }
+.intro p, #biography-content p:not([lang=bo]) { font-family: 'EB Garamond',Georgia,serif; font-size: 1.22rem; line-height: 1.6; }
+.intro p.italic { font-size: 1.04rem; }
+.portrait { width: min(12rem,65%); height: auto; }
+header h1 { line-height: 1.15; }
+header .font-tibetan { white-space: nowrap; }
+[id^=volume-] { scroll-margin-block-start: 8rem; }
+.fold { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .35s ease; }
+.fold[inert] { grid-template-rows: 0fr; }
+.fold-body { min-height: 0; overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { .fold { transition: none; } }
+footer { padding-bottom: 6rem !important; }
+.bar-btn svg { height:18px; width:18px; }
+.size-controls { border-left: 1px solid var(--border); }
+.bar-btn:disabled { opacity:.4; }
+@media (max-width:639px) {
+  header .catalogue { gap: .4rem; }
+  header .catalogue > div { justify-content:center; }
+  header h1 { font-size: 1.5rem; }
+  header h2.font-tibetan { font-size:1.15rem; }
+  header input { min-width:0; }
+  [id^=volume-] { scroll-margin-top: 9rem; }
+  .biography-text { padding-inline: 1.1rem; }
+}
